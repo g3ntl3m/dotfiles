@@ -1,0 +1,46 @@
+;==========================================================
+;
+;
+;   ██████╗  ██████╗ ██╗  ██╗   ██╗██████╗  █████╗ ██████╗
+;   ██╔══██╗██╔═══██╗██║  ╚██╗ ██╔╝██╔══██╗██╔══██╗██╔══██╗
+;   ██████╔╝██║   ██║██║   ╚████╔╝ ██████╔╝███████║██████╔╝
+;   ██╔═══╝ ██║   ██║██║    ╚██╔╝  ██╔══██╗██╔══██║██╔══██╗
+;   ██║     ╚██████╔╝███████╗██║   ██████╔╝██║  ██║██║  ██║
+;   ╚═╝      ╚═════╝ ╚══════╝╚═╝   ╚═════╝ ╚═╝  ╚═╝╚═╝  ╚═╝
+;
+;
+;==========================================================
+
+include-file = ~/.config/polybar/modules.ini
+include-file = ~/.config/polybar/colors-dark.ini
+
+[bar/bspwm]
+monitor = ${env:MONITOR:eDP-1}
+monitor-fallback = ${env:MONITOR:HDMI-1}
+width = 100%
+height = 36
+border-color = ${primary-foreground}
+background = ${colors.background}
+foreground = ${colors.foreground}
+padding-left = 0
+padding-right = 5
+module-margin-left = 1
+module-margin-right = 2
+font-0 = Ubuntu:weight=SemiBold:size=11;2
+font-1 = Hack Nerd Font:weight=Medium:size=13;2
+font-2 = Hack Nerd Font:weight=Medium:size=13;2
+font-3 = SawarabiGothic:weight=Medium:size=13;2
+cursor-click = pointer
+cursor-scroll = ns-resize
+;;;;;; Module Positioning 
+modules-left = bspwm
+modules-right = local-ip cpu memory-info wlan eth-info disk battery1 battery2 audio temperature date powermenu
+
+[settings]
+screenchange-reload = true
+;compositing-background = xor
+;compositing-background = screen
+;compositing-foreground = source
+;compositing-border = over
+;pseudo-transparency = false [global/wm] margin-top = 5 margin-bottom = 5 vim:set ft=dosini:
+

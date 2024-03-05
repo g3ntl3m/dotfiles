@@ -1,0 +1,170 @@
+"$schema" = 'https://starship.rs/config-schema.json'
+
+format = """
+[┌── ](color_green)\
+$os\
+$username\
+$hostname\
+$localip\
+$directory\
+$c\
+$rust\
+$golang\
+$nodejs\
+$java\
+$python\
+$lua\
+$git_branch\
+$git_status\
+$docker_context\
+$time
+[└─](bold green)\
+$character"""
+
+palette = 'nord_dark'
+
+[palettes.nord_dark]
+color_fg0 = '#D8DEE9'
+color_bg1 = '#2E3440'
+color_bg3 = '#4C566A'
+color_blue = '#5E81AC'
+color_aqua = '#8FBCBB'
+color_green = '#A3BE8C'
+color_orange = '#D08770'
+color_purple = '#B48EAD'
+color_red = '#BF616A'
+color_yellow = '#EBCB8B'
+
+[os]
+disabled = false
+style = "bold fg:color_blue"
+format = '[\(](fg:color_green)[$symbol:]($style)'
+
+[os.symbols]
+Windows = "󰍲"
+Ubuntu = "󰕈"
+SUSE = ""
+Raspbian = "󰐿"
+Mint = "󰣭"
+Macos = "󰀵"
+Manjaro = ""
+Linux = "󰌽"
+Gentoo = "󰣨"
+Fedora = "󰣛"
+Alpine = ""
+Amazon = ""
+Android = ""
+Arch = "󰣇"
+Artix = "󰣇"
+Unknown = ""
+CentOS = ""
+Debian = "󰣚"
+Redhat = "󱄛"
+RedHatEnterprise = "󱄛"
+
+[username]
+show_always = true
+style_user = "bold fg:color_blue"
+style_root = "bold fg:color_red"
+format = '[$user]($style)[\)-](fg:color_green)'
+
+[hostname]
+ssh_only = true
+ssh_symbol = ''
+trim_at = "-"
+style = "bold dimmed color_purple"
+format = '[[ $symbol $hostname ]]($style)'
+
+[localip]
+ssh_only = true
+format = '[$localipv4]($style)'
+style = "bold color_purple"
+
+[directory]
+style = "bold fg:color_bg0"
+format = '[\[](fg:color_green)[$path]($style)[\]](fg:color_green)'
+truncation_length = 10
+truncation_symbol = "…/"
+
+[directory.substitutions]
+"Documents" = "󰈙 "
+"Downloads" = " "
+"Music" = "󰝚 "
+"Pictures" = " "
+"Developer" = "󰲋 "
+
+[git_branch]
+symbol = ""
+style = "color_yellow"
+format = '[\(](fg:color_yellow)[[$symbol $branch](fg:color_yellow)]($style)'
+
+[git_status]
+style = "color_yellow"
+format = '[[($all_status$ahead_behind)](fg:color_yellow)]($style)[\)](fg:yellow)'
+
+[nodejs]
+symbol = ""
+style = "fg:color_blue"
+format = '[-\[](fg:color_green)[[$symbol( $version)](fg:color_blue)]($style)[\]](fg:color_green)'
+
+[c]
+symbol = " "
+style = "fg:color_blue"
+format = '[-\[](fg:color_green)[[$symbol( $version)](fg:color_blue)]($style)[\]](fg:color_green)'
+
+[rust]
+symbol = ""
+style = "fg:color_blue"
+format = '[-\[](fg:color_green)[[$symbol( $version)](fg:color_blue)]($style)[\]](fg:color_green)'
+
+[golang]
+symbol = ""
+style = "fg:color_blue"
+format = '[-\[](fg:color_green)[[$symbol( $version)](fg:color_blue)]($style)[\]](fg:color_green)'
+
+[java]
+symbol = " "
+style = "fg:color_blue"
+format = '[-\[](fg:color_green)[[$symbol( $version)](fg:color_blue)]($style)[\]](fg:color_green)'
+
+[python]
+symbol = ""
+style = "fg:color_blue"
+format = '[-\[](fg:color_green)[[$symbol( $version)](fg:color_blue)]($style)[\]](fg:color_green)'
+
+[lua]
+symbol = ""
+style = "fg:color_blue"
+format = '[-\[](fg:color_green)[[$symbol( $version)](fg:color_blue)]($style)[\]](fg:color_green)'
+version_format = 'v${raw}'
+
+[docker_context]
+symbol = ""
+style = "fg:color_aqua"
+format = '[[ $symbol( $context) ](fg:color_aqua )]($style)'
+
+[aws]
+symbol = '󰸏'
+style = "fg:color_orange"
+format = '[[ $symbol( $context) ](fg:color_orange )]($style)'
+
+[azure]
+symbol = '󰠅'
+style = "fg:color_orange"
+format = '[[ $symbol( $context) ](fg:color_orange )]($style)'
+
+[gcloud]
+symbol = '󱇶'
+style = "fg:color_orange"
+format = '[[ $symbol( $context) ](fg:color_orange )]($style)'
+
+[time]
+disabled = false
+time_format = "%R"
+style = "fg:color_bg1"
+format = '[[ 󰲉 $time ](fg:color_fg0)]($style)'
+
+[character]
+disabled = false
+success_symbol = '[󰅂](bold fg:color_green)'
+error_symbol = '[󰅂](bold fg:color_red)'

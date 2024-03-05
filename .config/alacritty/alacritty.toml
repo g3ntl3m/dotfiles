@@ -1,0 +1,96 @@
+# Configuration for Alacritty, the GPU enhanced terminal emulator
+# https://alacritty.org/config-alacritty.html
+
+# Environment variables
+[env]
+  TERM = "xterm-256color"
+
+[window]
+  # Window padding (changes require restart)
+  padding = {x = 2, y = 2}
+  dimensions = {columns = 152, lines = 98}
+  position = {x = 550, y = 250}
+  decorations = "Transparent"
+  blur = true
+  # Spread additional padding evenly around the terminal content.
+  dynamic_padding = true
+  # Background opacity
+  opacity = 0.7
+  startup_mode = "Windowed"
+  dynamic_title = false
+
+[scrolling]
+  # Maximum number of lines in the scrollback buffer.
+  # Specifying '0' will disable scrolling.
+  history = 4000
+  # Scrolling distance multiplier.
+  multiplier = 3
+
+# Font configuration
+[font]
+  normal = {family = "JetBrainsMono Nerd Font", style = "Regular"}
+  # Bold font face
+  bold = {family = "JetBrainsMono Nerd Font", style =  "Bold"}
+  # Italic font face
+  italic = {family = "JetBrainsMono Nerd Font", style = "Italic"}
+  # Bold italic font face
+  bold_italic = {family = "JetBrainsMono Nerd Font", style = "Bold Italic"}
+  # Point size
+  size = 15.0
+  offset = {x = 0, y = 0}
+  glyph_offset = {x = 0, y = 0}
+
+[colors]
+# Transparent cell backgrounds
+  transparent_background_colors = true
+  cursor = {text = "#2e3440", cursor = "#d8dee9"}
+  selection = {text = "CellForeground", background = "#4c566a"}
+  vi_mode_cursor = {text = "#2e3440", cursor = "#d8dee9"}
+  footer_bar = {background = "#434c5e", foreground = "#d8dee9"}
+  
+[colors.primary]
+  background = "#000000"
+  foreground = "#d8dee9"
+  dim_foreground = "#a5abb6"
+    
+[colors.search]
+  matches = {foreground = "CellBackground", background = "#88c0d0"}
+      
+[colors.normal]
+  black = "#3b4252"
+  red = "#bf616a"
+  green = "#a3be8c"
+  yellow = "#ebcb8b"
+  blue = "#81a1c1"
+  magenta = "#b48ead"
+  cyan = "#88c0d0"
+  white = "#e5e9f0"
+[colors.bright]
+  black = "#4c566a"
+  red = "#bf616a"
+  green = "#a3be8c"
+  yellow = "#ebcb8b"
+  blue = "#81a1c1"
+  magenta = "#b48ead"
+  cyan = "#8fbcbb"
+  white = "#eceff4"
+[colors.dim]
+  black = "#373e4d"
+  red= "#94545d"
+  green = "#809575"
+  yellow = "#b29e75"
+  blue = "#68809a"
+  magenta = "#8c738c"
+  cyan = "#6d96a5"
+  white = "#aeb3bb"
+
+[cursor]
+  style = {shape = "Beam", blinking = "Always"}
+  vi_mode_style = {shape = "Block", blinking = "Always"}
+  thickness = 0.2
+
+[selection]
+# This string contains all characters that are used as separators for "semantic words" in Alacritty.
+  semantic_escape_chars = ",│`|:\"' ()[]{}<>\t"
+# When set to `true`, selected text will be copied to the primary clipboard.
+  save_to_clipboard = true
